@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--The type of font we are using-->
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Tells the -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="author" content="Your Name Here">
+    <meta name="description" content="Default HTML Page for SE 111">
+    
+    <link type="text/css" rel="stylesheet" href="style.css">
+
+    <title>Week 5 | Tables and Forms</title>
 </head>
 <body>
     <h1>Birthday Registration Form</h1>
@@ -34,11 +40,11 @@
 
                 <tr>
                     <td>
-                        <h2>Question</h2>
+                        <h2>Tables</h2>
                     </td>
 
                     <td>
-                        <h2>Answer</h2>
+                        <h2>Form fields</h2>
                     </td>
 
                 </tr>
@@ -51,22 +57,24 @@
                 <tr>
                     <!--first column - LABEL -->
                     <td>
-                        <label for="fName">First Name:</label>
+                        <label for="fName">Parent/Guardian Name</label>
                     </td>
 
                     <!--second column- INPUT -->
                     <td>
-                        <input type="text" name="fName" id="fName">
+                        <input type="text" maxlength="20" name="gfirst" id="g-first" placeholder="First Name" required>
                     </td>
 
                 </tr>
+
+                <br>
 
                 <!--Table Row-->
                 <tr>
 
                     <!--first column - LABEL -->
                     <td>
-                        <label for="lName">Last Name:</label>
+                        <label for="lName">Child's First Name </label>
                     </td>
 
                     <!--second column- INPUT -->
@@ -80,7 +88,7 @@
                 <tr>
                     <!--first column - LABEL -->
                     <td>
-                        <label for="age">Age:</label>
+                        <label for="age">Child's Age</label>
                     </td>
 
                     <!--second column- INPUT -->
@@ -94,15 +102,14 @@
 
                     <!--first column - LABEL -->
                     <td>
-                        <label for="email">Email: </label>
+                        <h2 ><em>Date and Time </em> </h2>
                     </td>
 
                     <!--second column- INPUT -->
 
                     <td>
 
-                        <input type="text" id="email" name="email" maxlength="50" placeholder="email@email.com">
-
+                        
                     </td>
 
                 </tr>
@@ -115,16 +122,16 @@
 
                     <td>
 
-                        <label for="comments">Comments: </label>
+                        <label for="Date">Date </label>
 
                     </td>
 
                     <!--second column- INPUT -->
 
                     <td>
+                        <input type="date" required name="date">
 
-                        <textarea name="comments" id="comments" rows="10" cols="21" placeholder="Enter your comment here ..." style="font-family:Arial, Helvetica, sans-serif"></textarea>
-
+                        
                     </td>
 
                 </tr>
@@ -137,29 +144,12 @@
 
                     <td>
 
-                        <label for="faveColor">Pick Your Favorite Color: </label>
+                        <label for="Start Time">Start Time </label> 
 
                     </td>
 
                     <td>
-
-                        <select name="faveColor">
-
-                            <option value="red">Red</option>
-
-                            <option value="orange">Orange</option>
-
-                            <option value="yellow">Yellow</option>
-
-                            <option value="green">Green</option>
-
-                            <option value="blue">Blue</option>
-
-                            <option value="indigo">Indigo</option>
-
-                            <option value="violet">Violet</option>
-
-                        </select>
+                        <input type="time" required name="time">
 
                     </td>
 
@@ -171,17 +161,13 @@
 
                     <td>
 
-                        <label for="study">Program of Study:</label>
+                        <label for="Number of Guests">Number of Guests</label>
 
                     </td>
 
                     <td>
 
-                        <input type="radio" name="study" value="SE">Software Engineering <br>
-
-                        <input type="radio" name="study" value="CYB">Cybersecurity <br>
-
-                        <input type="radio" name="study" value="WD">Web Development <br>
+                        <input type="number" name="Guests" value ="5">
 
                     </td>
 
@@ -193,23 +179,13 @@
 
                     <td>
 
-                        <label for="vehicle">Select Your Vehicles</label>
+                        <h2 ><em> Food </em> </h2>
 
                     </td>
 
                     <td>
 
-                        <input type="checkbox" name="vehicle1" value="car">Car <br>
-
-                        <input type="checkbox" name="vehicle2" value="Rocinante">The Rocinante <br>
-
-                        <input type="checkbox" name="vehicle3" value="motorcycle">Motorcycle <br>
-
-                        <input type="checkbox" name="vehicle4" value="bike">Bicycle <br>
-
-                        <input type="checkbox" name="vehicle5" value="dragon">Dragon <br>
-
-                        <input type="checkbox" name="vehicle6" value="horse">Horse <br>
+                    
 
                     </td>
 
@@ -219,24 +195,102 @@
 
                     <td>
 
-                        <label for="date">Date: </label>
+                        <label for="Size">Size </label>
 
                     </td>
 
                     <td>
 
-                        <input type="date" name="date">
+                        <input type="radio" name="sm"><input type="radio" name="md"><input type="radio" name="LG">
 
                     </td>
 
                 </tr>
 
-                <!--submit button! must have for functionality!-->
+                
+                <tr>
+
+                    <td>
+
+                        <label for="Drinks">Drinks </label>
+
+                    </td>
+
+                    <td>
+
+                        <input type="checkbox" required name="drink1" value="Coke"
+
+                    </td>
+
+                </tr>
+
+                
+                <tr>
+
+                    <td>
+
+                        <label for="Cake">Cake </label>
+
+                    </td>
+
+                    <td>
+
+                        <select name="Cake"></select> <option>chocolate</option> <option>Vinilla</option> <option>I'll bring my own</option>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <!--first column - LABEL -->
+                    <td>
+                        <h2 ><em>Decorations </em> </h2>
+                    </td>
+
+                    <!--second column- INPUT -->
+
+                    <td>
+
+                        
+                    </td>
+
+                </tr>
 
                 <tr>
 
                     <td>
 
+                        <label for="Color Scheme">Color scheme </label> 
+
+                    </td>
+
+                    <td>
+                        <input type="color" name="colors">
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+
+                        <label for="Additional Comments">Additional Comments</label> 
+
+                    </td>
+
+                    <td>
+                        <textarea  placeholder="Please add any additional comments here" name="comments"></textarea>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        
                     </td>
 
                     <td>
@@ -250,7 +304,7 @@
             </tbody>
 
         </table>
-
+        <br>
     </form>
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/uvIsvZlk4GE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
