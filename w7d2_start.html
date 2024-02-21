@@ -151,13 +151,15 @@
         function formConfirm()
         {
 
+            info.innerHTML = ''
             //access a global value inside of the function
-            console.log(first)
+            //console.log(first)
             var fvalue = first.value
-            console.log('First Value: ${fvalue}')
+            //console.log('First Value: ${fvalue}')
             //formconfirm() CLOSE
+            //console.log('First Value: ${fvalue}')
 
-            console.log('First Value: ${fvalue}')
+            
 
             //using a local variable - ONLY ACCESSIBLE IN THE FUNCTION
             var fname = document.getElementById(`first`).value
@@ -198,21 +200,24 @@
             info.innerHTML += `<p>`
             info.innerHTML += fullName
             info.innerHTML += `</p>`
+            
+            var lValue = lastName.value
+            var aValue = Number(age.value)
 
             //conditionals in JS-------------------
             age = Number(age) //casts age as a Number type (instead of string)
             var activity = ``
 
             //age filter - "for fun activities"
-            if (age >= 21)
+            if (avalue >= 21)
             {
                 activity += 'Drink!'
             }
-            if (age >= 18)
+            else if (avalue >= 18)
             {
                 activity += `Vote!`
             }
-            if (age >= 16)
+            if (avalue >= 16)
             {
                 activity += `Drive!`
             }
@@ -224,6 +229,35 @@
 
             info.innerHTML += `<br><br>`
             info.innerHTML += `<h2> ${activity} </h2`
+
+            
+            document.getElementByID(`me`).addEventListener(`click`, paraBtn)
+
+            var me = document.getElementByID(`me`)
+
+            var count = 0
+
+            function paraBtn(event)
+            {
+                count += 1 
+
+                if (count % 2 == 0)
+                {
+
+                    me.style.fontSize = "36px"
+                    me.style.color = "magenta"
+                    me.innerHTML = "Hey you CLICKED me!"
+            
+                }
+                else
+                {
+
+                    me.style.fontSize = "12px"
+                    me.style.color = "white"
+                    me.innerHTML = "CLICK ME"
+
+                }
+            }
 
 
         }//formConfirm() CLOSE
