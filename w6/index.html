@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--we should have at least 1 HTML element in the page before the <script> tags-->
+        <h1>Derek's Calculator</h1>
+
+        <!--IN DOCUMENT JAVASCRIPT-->
+        <script>
+             var hourlyPay = Number(prompt("Enter your hourly pay:"));
+        var hoursWorked = Number(prompt("Enter your hours worked for a two-week period:"));
+    
+        var grossPay = hourlyPay * hoursWorked;
+    
+        var taxRate = 0.20;
+        var taxAmount = grossPay * taxRate;
+    
+        var netPay = grossPay - taxAmount;
+    
+        var outputMessage = "Gross Pay: $" + grossPay.toFixed(2) + "\n";
+        outputMessage += "Uncle Sam's Share: $" + taxAmount.toFixed(2) + "\n";
+        outputMessage += "Net Pay: $" + netPay.toFixed(2);
+    
+        alert(outputMessage);
+        console.log("Gross Pay: $" + grossPay.toFixed(2));
+        console.log("Uncle Sam's Share: $" + taxAmount.toFixed(2));
+        console.log("Net Pay: $" + netPay.toFixed(2));
+
+    
+        </script>
+    
+    
+</body>
+</html>
