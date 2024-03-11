@@ -118,36 +118,39 @@
 
         var h1 = document.getElementById(`hi`)
 
-        var firstName = document.getElementById("firstName")
+        var firstName = document.getElementById("first")
 
-        var lastName = document.getElementById("lastName")
+        var lastName = document.getElementById("last")
 
         var rate = document.getElementById("rate")
 
-        var hourly = document.getElementById("hourly")
+        var hours = document.getElementById("hours")
         
         var input1 = document.getElementById(`enterButton`)
 
         var input2 = document.getElementById(`confirmButton`)
 
-        console.log = (body)
+        console.log(body)
 
-        console.log = (h1)
+        console.log(h1)
 
-        console.log = (input1)
+        console.log(input1)
 
-        console.log = (input2)
+        console.log(input2)
 
-        console.log = (info)
+        console.log(info)
 
 
 
         //PART2------adding event listeners------------------------
         /*
             add an event listener to the #enter-button that runs a function called "formData"
+        
 
             add an event listener to the #confirm-button that runs a function called "confirmForm"
         */
+        document.querySelector(`#enter-button`).addEventListener(`click`, formData)
+        document.querySelector(`#confirm-button`).addEventListener(`click`, confirmData)
 
 
         //PART3------building event functions----------------------
@@ -163,7 +166,7 @@
                     HINT EX: `<p><b>Full Name:</b> ${fullName}`
 
                 REMEMBER: form text field data is treated as a STRING so you will most likely need the Number() 
-
+                
 
             confirmForm() instructions:
                 -store the input element values to descriptive names
@@ -180,12 +183,54 @@
             /*
                 Once your file is working, add ONE INSTRUCTION above this comment, but inside of the formData(), that makes sure if the user resubmits the form without reloading the page, only the new form info is displayed
             */
+            var hourlyPay = Number(rate.value);
+        var hoursWorked = Number(hours.value);
+    
+        var grossPay = hourlyPay * hoursWorked;
+    
+        var taxRate = 0.20;
+        var taxAmount = grossPay * taxRate;
+    
+        var netPay = grossPay - taxAmount;
+
+        var fullName = firstName.value + ` ` + lastName.value
+
+
+        console.log(fullName);
+        console.log(grossPay);
+        console.log(netPay);
+        console.log(taxAmount);
+
+    
+
+            info.innerHTML += `<p><b>Name:</b>${fullName}</p>`
+            info.innerHTML += `<p><b>Net:</b>${netPay.toFixed(2)}</p>`
+            info.innerHTML += `<p><b>Tax:</b>${taxAmount.toFixed(2)}</p>`
+            info.innerHTML += `<p><b>Gross:</b>${grossPay.toFixed(2)}</p>`
+    
 
        }//formData()
 
 
        function confirmData(event)
        {
+        var hourlyPay = Number(rate.value);
+        var hoursWorked = Number(hours.value);
+    
+        var grossPay = hourlyPay * hoursWorked;
+    
+        var taxRate = 0.20;
+        var taxAmount = grossPay * taxRate;
+    
+        var netPay = grossPay - taxAmount;
+
+        var fullName = firstName.value + ` ` + lastName.value
+        var outputMessage = "Gross Pay: $" + grossPay.toFixed(2) + "\n";
+        outputMessage += "Uncle Sam's Share: $" + taxAmount.toFixed(2) + "\n";
+        outputMessage += "Net Pay: $" + netPay.toFixed(2)+ "\n";
+        outputMessage += "fullName: " + fullName;
+    
+        alert(outputMessage);
 
        }//confirmData()
 
